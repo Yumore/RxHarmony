@@ -1,0 +1,108 @@
+<!--
+ * @Author: Nathaniel
+ * @Date: 2021-02-06 13:41:17
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Document</title>
+    <style>
+            form {
+                width: 300px;
+                margin: 30px;
+                padding: 30px 50px 50px;
+                border: 1px solid #dcdcdc;
+                float: left;
+            }
+
+            label {
+                display: flex;
+                line-height: 30px;
+                margin-bottom: 20px;
+            }
+
+            span {
+                width: 100px;
+
+            }
+
+            input {
+                flex: 1;
+                border: 1px solid #dcdcdc;
+            }
+
+            input[type="submit"] {
+                color: #fff;
+                background: #f43553;
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+            }
+
+    </style>
+</head>
+
+<body>
+<form action="http://localhost:3000/user/login">
+    <h2>登录</h2>
+    <label for="">
+        <span>用户名</span>
+        <input name="name" type="text"/>
+    </label>
+    <label for="">
+        <span>密码</span>
+        <input name="password" type="password"/>
+    </label>
+    <input type="submit" value="提交">
+</form>
+<form action="http://localhost:3000/user/register">
+    <h2>注册</h2>
+    <label for="">
+        <span>用户名</span>
+        <input name="name" type="text"/>
+    </label>
+    <label for="">
+        <span>真实姓名</span>
+        <input name="realname" type="text"/>
+    </label>
+    <label for="">
+        <span>密码</span>
+        <input name="password" type="password"/>
+    </label>
+    <input type="submit" value="提交">
+</form>
+<form action="http://localhost:3000/user/updatePassword">
+    <h2>修改密码</h2>
+    <label for="">
+        <span>用户名</span>
+        <input name="name" type="text"/>
+    </label>
+    <label for="">
+        <span>密码</span>
+        <input name="oldPassword" type="text"/>
+    </label>
+    <label for="">
+        <span>密码</span>
+        <input name="newPassword" type="text"/>
+    </label>
+    <label for="">
+        <span>密码</span>
+        <input name="againPassword" type="text"/>
+    </label>
+    <input type="submit" value="提交">
+</form>
+<form action="http://localhost:3000/user/deleteUser">
+    <h2>删除用户</h2>
+    <label for="">
+        <span>用户名</span>
+        <input name="name" type="text"/>
+    </label>
+    <input type="submit" value="提交">
+</form>
+</body>
+
+</html>

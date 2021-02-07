@@ -1,0 +1,49 @@
+{
+  "app": {
+    "bundleName": "com.nathaniel.rxharmony",
+    "vendor": "nathaniel",
+    "version": {
+      "code": 1,
+      "name": "1.0"
+    },
+    "apiVersion": {
+      "compatible": 3,
+      "target": 4,
+      "releaseType": "Beta2"
+    }
+  },
+  "deviceConfig": {},
+  "module": {
+    "package": "com.nathaniel.rxharmony",
+    "name": ".MyApplication",
+    "deviceType": [
+      "phone"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry"
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "name": "com.nathaniel.rxharmony.MainAbility",
+        "icon": "$media:icon",
+        "description": "$string:mainability_description",
+        "label": "RxHarmony",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ]
+  }
+}
