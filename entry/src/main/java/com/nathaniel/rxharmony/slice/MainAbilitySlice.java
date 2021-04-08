@@ -7,6 +7,11 @@ import com.nathaniel.rxharmony.main.MainPresenter;
 import com.nathaniel.rxharmony.main.MainView;
 import ohos.agp.window.dialog.ToastDialog;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public class MainAbilitySlice extends BaseAbilitySlice<MainPresenter> implements MainView {
 
     @Override

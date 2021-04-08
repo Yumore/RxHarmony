@@ -4,6 +4,11 @@ import com.google.gson.*;
 
 import java.lang.reflect.Type;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public class StringDefaultConverter implements JsonSerializer<String>, JsonDeserializer<String> {
     @Override
     public String deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {

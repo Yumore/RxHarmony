@@ -9,14 +9,19 @@ import java.io.InterruptedIOException;
 import java.net.ConnectException;
 import java.net.UnknownHostException;
 import java.text.ParseException;
-
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public abstract class BaseObserver<T> extends DisposableObserver<BaseEntity<T>> {
+    protected BaseView baseView;
     public static final int PARSE_ERROR = 10008;
     public static final int BAD_NETWORK = 10007;
     public static final int CONNECT_ERROR = 10006;
     public static final int CONNECT_TIMEOUT = 10005;
     public static final int CONNECT_N = 10004;
-    protected BaseView baseView;
+
     private boolean displayed;
 
     public BaseObserver(BaseView view) {

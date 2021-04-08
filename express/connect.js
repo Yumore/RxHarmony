@@ -28,7 +28,6 @@ const option = {
     multipleStatements: false //是否允许一个query中包含多条sql语句
 }
 let pool;
-
 repool()
 
 function Res({ code = 200, msg = '', data = {} }) {

@@ -8,8 +8,12 @@ import ohos.agp.components.ComponentContainer;
 import ohos.agp.components.LayoutScatter;
 import ohos.app.Context;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public abstract class BaseFraction<P extends BasePresenter> extends Fraction implements BaseView {
-    public Context mContext;
     protected P mPresenter;
     protected Component mComponentView;
 
@@ -20,6 +24,8 @@ public abstract class BaseFraction<P extends BasePresenter> extends Fraction imp
     public abstract void initComponent();
 
     public abstract void initData();
+
+    public Context mContext;
 
     @Override
     protected Component onComponentAttached(LayoutScatter scatter, ComponentContainer container, Intent intent) {
@@ -46,6 +52,7 @@ public abstract class BaseFraction<P extends BasePresenter> extends Fraction imp
         super.onForeground(intent);
     }
 
+    @Override
     public String getString(int resId) {
         try {
             return getFractionAbility().getResourceManager().getElement(resId).getString();
@@ -55,6 +62,7 @@ public abstract class BaseFraction<P extends BasePresenter> extends Fraction imp
         return "";
     }
 
+    @Override
     public int getColor(int colorId) {
         try {
             return getFractionAbility().getResourceManager().getElement(colorId).getColor();
@@ -74,15 +82,12 @@ public abstract class BaseFraction<P extends BasePresenter> extends Fraction imp
 
     }
 
-    @Override
     public void onErrorState(BaseEntity model, int mType) {
-        if (!BaseContent.getIsTrueCode(model.getCode())) {
-
+        if (!BaseConstants.getIsTrueCode(model.getCode())) {
 //            Toast.show(mContext, model.getMsg());
         }
     }
 
-    @Override
     public void onProgress(int progress) {
 
     }

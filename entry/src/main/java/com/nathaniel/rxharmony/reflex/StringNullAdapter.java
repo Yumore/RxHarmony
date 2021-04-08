@@ -7,12 +7,18 @@ import com.google.gson.stream.JsonWriter;
 
 import java.io.IOException;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public class StringNullAdapter extends TypeAdapter<String> {
     @Override
     public String read(JsonReader reader) throws IOException {
         if (reader.peek() == JsonToken.NULL) {
             reader.nextNull();
-            return "";//原先是返回Null，这里改为返回空字符串
+            //原先是返回Null，这里改为返回空字符串
+            return "";
         }
 
         String jsonStr = reader.nextString();

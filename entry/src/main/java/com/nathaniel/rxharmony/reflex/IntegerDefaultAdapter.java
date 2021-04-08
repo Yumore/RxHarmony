@@ -4,12 +4,18 @@ import com.google.gson.*;
 
 import java.lang.reflect.Type;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public class IntegerDefaultAdapter implements JsonSerializer<Integer>, JsonDeserializer<Integer> {
     @Override
     public Integer deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
             throws JsonParseException {
         try {
-            if (json.getAsString().equals("") || json.getAsString().equals("null")) {//定义为int类型,如果后台返回""或者null,则返回0
+            if (json.getAsString().equals("") || json.getAsString().equals("null")) {
+                //定义为int类型,如果后台返回""或者null,则返回0
                 return 0;
             }
         } catch (Exception ignore) {

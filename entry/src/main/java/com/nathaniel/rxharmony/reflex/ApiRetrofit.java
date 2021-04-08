@@ -9,12 +9,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public class ApiRetrofit {
-    private static final int DEFAULT_TIMEOUT = 15;
     private static ApiRetrofit apiRetrofit;
-    public String baseUrl = BaseContent.BASE_URL;
-    private Retrofit retrofit;
-    private ApiService apiService;
+    private static final int DEFAULT_TIMEOUT = 15;
+    private final Retrofit retrofit;
+    private final ApiService apiService;
+    public String baseUrl = BaseConstants.BASE_URL;
     private Gson gson;
 
     public ApiRetrofit() {
@@ -55,7 +60,7 @@ public class ApiRetrofit {
      * 3.long=>0L
      * 4.String=>""
      *
-     * @return
+     * @return GSON
      */
     public Gson buildGson() {
         if (gson == null) {

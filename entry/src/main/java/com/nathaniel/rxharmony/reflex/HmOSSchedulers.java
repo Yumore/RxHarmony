@@ -6,7 +6,16 @@ import ohos.eventhandler.EventRunner;
 
 import java.util.concurrent.Callable;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public final class HmOSSchedulers {
+    private HmOSSchedulers() {
+        throw new AssertionError("No instances.");
+    }
+
     private static final Scheduler MAIN_THREAD = RxHmOSPlugins.initMainThreadScheduler(
             new Callable<Scheduler>() {
                 @Override
@@ -14,10 +23,6 @@ public final class HmOSSchedulers {
                     return MainHolder.DEFAULT;
                 }
             });
-
-    private HmOSSchedulers() {
-        throw new AssertionError("No instances.");
-    }
 
     public static Scheduler mainThread() {
         return RxHmOSPlugins.onMainThreadScheduler(MAIN_THREAD);

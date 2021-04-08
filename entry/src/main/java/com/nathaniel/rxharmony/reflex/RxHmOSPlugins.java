@@ -6,6 +6,11 @@ import io.reactivex.functions.Function;
 
 import java.util.concurrent.Callable;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public final class RxHmOSPlugins {
     private static volatile Function<Callable<Scheduler>, Scheduler> onInitMainThreadHandler;
     private static volatile Function<Scheduler, Scheduler> onMainThreadHandler;
@@ -44,10 +49,6 @@ public final class RxHmOSPlugins {
         return onInitMainThreadHandler;
     }
 
-    public static void setInitMainThreadSchedulerHandler(Function<Callable<Scheduler>, Scheduler> handler) {
-        onInitMainThreadHandler = handler;
-    }
-
     public static Function<Scheduler, Scheduler> getOnMainThreadSchedulerHandler() {
         return onMainThreadHandler;
     }
@@ -83,5 +84,9 @@ public final class RxHmOSPlugins {
         } catch (Throwable ex) {
             throw Exceptions.propagate(ex);
         }
+    }
+
+    public static void setInitMainThreadSchedulerHandler(Function<Callable<Scheduler>, Scheduler> handler) {
+        onInitMainThreadHandler = handler;
     }
 }

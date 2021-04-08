@@ -8,6 +8,11 @@ import ohos.eventhandler.EventHandler;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 final class HandlerScheduler extends Scheduler {
     private final EventHandler handler;
 
@@ -17,8 +22,12 @@ final class HandlerScheduler extends Scheduler {
 
     @Override
     public Disposable scheduleDirect(Runnable run, long delay, TimeUnit unit) {
-        if (run == null) throw new NullPointerException("run == null");
-        if (unit == null) throw new NullPointerException("unit == null");
+        if (run == null) {
+            throw new NullPointerException("run == null");
+        }
+        if (unit == null) {
+            throw new NullPointerException("unit == null");
+        }
         run = RxJavaPlugins.onSchedule(run);
         ScheduledRunnable scheduled = new ScheduledRunnable(handler, run);
         handler.postTask(scheduled, unit.toMillis(delay));

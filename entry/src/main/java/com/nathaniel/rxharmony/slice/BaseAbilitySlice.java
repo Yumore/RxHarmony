@@ -13,6 +13,11 @@ import ohos.agp.utils.LayoutAlignment;
 import ohos.agp.window.dialog.ToastDialog;
 import ohos.app.Context;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public abstract class BaseAbilitySlice<P extends BasePresenter> extends AbilitySlice implements BaseView {
     private Context context;
     private P presenter;
@@ -27,10 +32,18 @@ public abstract class BaseAbilitySlice<P extends BasePresenter> extends AbilityS
         super.setUIContent(getLayoutRes());
     }
 
+    /**
+     * create presenter
+     *
+     * @return P
+     */
     protected abstract P createPresenter();
 
     protected abstract int getLayoutRes();
 
+    /**
+     * initialize something before ui
+     */
     protected void beforeUIContent() {
 
     }

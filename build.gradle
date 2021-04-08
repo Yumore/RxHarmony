@@ -2,12 +2,12 @@
 apply plugin: 'com.huawei.ohos.app'
 
 ohos {
-    compileSdkVersion 4
+    compileSdkVersion 5
     defaultConfig {
-        compatibleSdkVersion 3
+        compatibleSdkVersion 4
     }
 }
-	
+
 buildscript {
     repositories {
         maven {
@@ -19,10 +19,11 @@ buildscript {
         maven {
             url "https://jitpack.io"
         }
-		jcenter()
+        jcenter()
     }
     dependencies {
-        classpath 'com.huawei.ohos:hap:2.4.1.4'
+        classpath 'com.huawei.ohos:hap:2.4.2.5'
+        classpath 'com.huawei.ohos:decctest:1.0.0.6'
     }
 }
 
@@ -37,6 +38,6 @@ allprojects {
         maven {
             url "https://jitpack.io"
         }
-		jcenter()
+        jcenter()
     }
 }

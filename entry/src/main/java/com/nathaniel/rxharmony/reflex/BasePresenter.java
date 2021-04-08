@@ -5,9 +5,14 @@ import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public class BasePresenter<V extends BaseView> {
-    public V baseView;
     private CompositeDisposable compositeDisposable;
+    public V baseView;
 
     public BasePresenter(V baseView) {
         this.baseView = baseView;
@@ -25,6 +30,9 @@ public class BasePresenter<V extends BaseView> {
         return baseView;
     }
 
+    /**
+     * @noinspection unchecked
+     */
     public void addDisposable(Observable<?> observable, BaseObserver observer) {
         if (compositeDisposable == null) {
             compositeDisposable = new CompositeDisposable();
@@ -34,6 +42,9 @@ public class BasePresenter<V extends BaseView> {
                 .subscribeWith(observer));
     }
 
+    /**
+     * @noinspection unchecked
+     */
     public void addDisposable(Observable<?> observable, DisposableObserver observer) {
         if (compositeDisposable == null) {
             compositeDisposable = new CompositeDisposable();

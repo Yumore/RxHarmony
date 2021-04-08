@@ -1,5 +1,10 @@
 package com.nathaniel.rxharmony.reflex;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public class ApiException extends Exception {
     private int errorCode;
     private String message;
@@ -12,6 +17,7 @@ public class ApiException extends Exception {
         this.errorCode = errorCode;
     }
 
+    @Override
     public String getMessage() {
         return message;
     }

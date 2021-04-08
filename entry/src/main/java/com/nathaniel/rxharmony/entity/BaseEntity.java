@@ -4,6 +4,11 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public class BaseEntity<T> implements Serializable {
     @SerializedName(value = "code", alternate = {"status", "Code", "code"})
     private int code;

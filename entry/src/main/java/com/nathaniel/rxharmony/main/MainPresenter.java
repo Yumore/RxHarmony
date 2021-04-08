@@ -9,9 +9,10 @@ import com.nathaniel.rxharmony.reflex.BasePresenter;
 
 import java.util.HashMap;
 import java.util.Map;
-
 /**
  * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
  */
 public class MainPresenter extends BasePresenter<MainView> implements UserContract {
     public MainPresenter(MainView baseView) {

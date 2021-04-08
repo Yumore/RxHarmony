@@ -9,6 +9,11 @@ import retrofit2.http.POST;
 
 import java.util.Map;
 
+/**
+ * @author nathaniel
+ * @version 1.0.0
+ * @contact <a href="mailto:nathanwriting@126.com">contact me</a>
+ */
 public interface ApiService {
     @FormUrlEncoded
     @POST("/user/register")

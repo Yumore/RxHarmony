@@ -193,6 +193,7 @@ router.get('/updatePassword', (req, res) => {
                             }
                         }
                     })
+
                 } else {
                     _data = {
                         code: -1,
@@ -264,5 +265,4 @@ router.get('/deleteUser', (req, res) => {
         pool.releaseConnection(conn) // 释放连接池，等待别的连接使用
     })
 })
-
 module.exports = router;
